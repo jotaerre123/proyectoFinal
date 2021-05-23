@@ -1,5 +1,7 @@
 # proyectoFinal
 
+Antes de nada, para iniciar la app con el navegador, se deberá poner lo siguiente: localhost:9000/admin/complemento/
+
 La app asemeja la parte de la administración de una tienda llamada Eververso de complementos del juego Destiny 2. Los complementos pueden clasificar de 3 formas: la primera y más importante es el tipo de complemento, que variará entre Vehículo, Gesto, Shader(color) y Diseño de arma. La rareza que caracteriza al complemento se divide en 2, excepcional y legendario, siendo el primero el mejor valorado por los jugadores (y más caro en la tienda).
 
 Por último, estos complementos se puede adquirir o bien mediante Polvo Luminoso, o bien mediante Plata, que son las dos monedas de cambio utilizables en la tienda. Los complementos que se decida que serán adquiribles mediante Polvo Luminoso, es prácticamente seguro que tengan un precio más elevado, ya que dicha moneda es más fácil de conseguir que la Plata, pero el administrador puede decidir que valor otorgarle.
