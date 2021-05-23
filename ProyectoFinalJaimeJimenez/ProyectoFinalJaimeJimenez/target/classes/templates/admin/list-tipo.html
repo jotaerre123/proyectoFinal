@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lista de Tipos</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/yourcode.js"
+	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+	crossorigin="anonymous"></script>
+<link href="../../static/css/estilos.css" th:href="@{/css/estilos.css}"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="../index.html"
+			th:href="@{/admin/complemento/}"> <img
+			src="https://www.light.gg/Content/Images/new-icon.png" alt="logo"
+			style="width: 50px;">
+		</a>
+		<h2>light.gg</h2>
+
+
+		<!-- Links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="../index.html"
+					th:href="@{/admin/complemento/}">Página Principal</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbardrop"
+					data-toggle="dropdown"> Gestión </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="list-tipo.html" th:href="@{/tipo/}">Gestión
+							de Tipos</a> <a class="dropdown-item" href="list-complemento.html"
+							th:href="@{/admin/complemento/listado/}">Gestión de
+							Complementos</a>
+					</div></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbardrop"
+					data-toggle="dropdown"> Filtrado por Tipo </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" th:each=" tipo: ${tipos}"
+							th:text="${tipo.nombre}" th:value="${tipo.id}">Gestión de
+							Tipos</a>
+
+					</div></li>
+
+			</ul>
+		</div>
+	</nav>
+
+
+	<a type="button" class="btn btn-warning btn-lg" href="form-tipo.html"
+		th:href="@{/tipo/nuevo/}">Nuevo</a>
+	<div class="container">
+		<table class="table text-light">
+			<thead>
+				<tr>
+					<th>Nombre Tipo</th>
+					<th>Operaciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each=" tipo: ${tipos}">
+					<td th:text="${tipo.nombre}">Nombre</td>
+					<td><a href="#" th:href="@{/tipo/editar/{id}(id=${tipo.id})}"
+						class="btn btn-outline-success">Editar</a> <a type="button"
+						class="btn btn-outline-danger" href="#"
+						th:href="@{/tipo/borrar/{id}(id=${tipo.id})}">Borrar</a></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<footer class="w-100 bg-dark p-0">
+		<div class="container text-white ">
+			<br>
+			<div class="row">
+				<div class="col-12 col-md-4 col-lg-2">
+					<img class="img-fluid"
+						src="https://images-na.ssl-images-amazon.com/images/I/61gC6SxkpQL.png"
+						alt="destiny">
+					<h4>Twitter</h4>
+					<p>
+						<i class="bi bi-twitter"></i> <a
+							href="https://twitter.com/destinythegame">@DestinyTheGame</a>
+					</p>
+				</div>
+				<div class="col-12 col-md-4 col-lg-4">
+					<h4 id="contacto">Contacto</h4>
+					<p>San Diego</p>
+					<p>
+						Dirección: Gaslamp Quarter - North Carolina<br> <br>
+						eMail: rocketleague@support.com
+					</p>
+				</div>
+				<div class="col-12 col-md-4 col-lg-6 ml-auto">
+					<p>
+						<img class="img-fluid w-75"
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Bungie_Logo_-_Official.svg/1200px-Bungie_Logo_-_Official.svg.png"
+							alt="logo">
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
